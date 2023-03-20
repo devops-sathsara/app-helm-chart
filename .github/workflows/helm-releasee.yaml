@@ -48,7 +48,11 @@ jobs:
 
   helm-release:
     runs-on: ubuntu-latest
-    name: Release Helm Chart
+    name: Release Helm Chart    
+    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
+    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
