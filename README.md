@@ -4,8 +4,8 @@
 
 ## Features
 
-* Lint and validate chart with [Chart Testing CLI](https://github.com/helm/chart-testing)
+* Lint and validate chart with [Chart Testing](https://github.com/helm/chart-testing) CLI
 * Install and test a chart on a [Kind](https://kind.sigs.k8s.io/) cluster
-* Package and release chart through GitHub pages
+* Package and release chart through [GitHub pages](https://github.com/devops-sathsara/ci-cd-helm-chart/tree/gh-pages)
 
 
