@@ -21,4 +21,25 @@ entries:
     urls:
     - https://github.com/devops-sathsara/app-helm-chart-ci-cd/releases/download/demo-app-0.1.1/demo-app-0.1.1.tgz
     version: 0.1.1
-generated: "2023-03-20T12:20:48.068811196Z"
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-27T15:26:10.232707828Z"
+    description: My demo app
+    digest: 840d6897bd64aecf6032f09ba2efe24f0b2d28776a3222a937245f556096d1f4
+    name: demo-app
+    type: application
+    urls:
+    - https://github.com/devops-sathsara/ci-cd-helm-chart/releases/download/demo-app-0.0.1/demo-app-0.0.1.tgz
+    version: 0.0.1
+  nginx:
+  - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2023-03-27T15:26:10.360999923Z"
+    description: A Helm chart for Kubernetes
+    digest: a169532215b15af3064763fc65e0c4ea2ac6250cc36c250ab1a9aa6c8a7bb8b1
+    name: nginx
+    type: application
+    urls:
+    - https://github.com/devops-sathsara/ci-cd-helm-chart/releases/download/nginx-0.1.2/nginx-0.1.2.tgz
+    version: 0.1.2
+generated: "2023-03-27T15:26:10.361010524Z"
