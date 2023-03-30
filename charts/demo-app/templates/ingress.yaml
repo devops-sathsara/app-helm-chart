@@ -10,6 +10,9 @@ spec:
   - http:
       paths:
       - path: /demo
+        pathType: Prefix
         backend: 
-          serviceName: demo-app-service
-          servicePort: 80
+          service:
+            name: demo-app-service
+            port: 
+              number: 80
