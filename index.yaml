@@ -23,6 +23,16 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-03-30T09:24:48.750216744Z"
+    description: My demo app
+    digest: 96982d4e4baa340d4e4fd9a9138f873556ed591202b973437a75d5747d7e57b7
+    name: demo-app
+    type: application
+    urls:
+    - https://github.com/devops-sathsara/ci-cd-helm-chart/releases/download/demo-app-0.0.4/demo-app-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-03-30T09:11:35.440182168Z"
     description: My demo app
     digest: ff18413c9a46bca23852276bea8104961dba395a93af3eb566a0d2eec18120aa
@@ -62,4 +72,4 @@ entries:
     urls:
     - https://github.com/devops-sathsara/ci-cd-helm-chart/releases/download/nginx-0.1.2/nginx-0.1.2.tgz
     version: 0.1.2
-generated: "2023-03-30T09:11:35.440208768Z"
+generated: "2023-03-30T09:24:48.750236444Z"
