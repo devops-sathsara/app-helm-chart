@@ -32,6 +32,7 @@ spec:
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
+          timeoutSeconds: 10  # https://github.com/kubernetes/kubernetes/issues/89898#issuecomment-1028654403
           failureThreshold: 2
         livenessProbe:
           httpGet:  
@@ -39,4 +40,5 @@ spec:
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
+          timeoutSeconds: 10  # https://github.com/kubernetes/kubernetes/issues/89898#issuecomment-1028654403
           failureThreshold: 10
