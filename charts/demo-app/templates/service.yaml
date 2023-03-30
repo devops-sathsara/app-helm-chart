@@ -1,0 +1,11 @@
+kind: Service
+apiVersion:
+metadata:
+  name: demo-app-service
+spec:
+  selector:
+    app: demo-app
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: http-port
