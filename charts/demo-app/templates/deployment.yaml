@@ -14,11 +14,16 @@ spec:
       labels:
         app: demo-app
     spec:
+      initContainers:
+      - name: init-demo-app
+        image: busybox:1.36
+        command: ['sh', '-c', "until nslookup demo-app-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for demo-app-service; sleep 2; done"]
       containers: 
       - name: demo-app
         image: us-central1-docker.pkg.dev/citric-shine-378115/demo-app/demo-app:latest
         ports:
-        - containerPort: 8080
+        - name: http-port
+          containerPort: 8080
         resources:
           requests:
             cpu: "100m"
@@ -29,7 +34,7 @@ spec:
         startupProbe:
           httpGet:  
             path: /
-            port: 8080
+            port: http-port
           initialDelaySeconds: 30
           periodSeconds: 5
           timeoutSeconds: 10  # https://github.com/kubernetes/kubernetes/issues/89898#issuecomment-1028654403
@@ -37,7 +42,7 @@ spec:
         readinessProbe:
           httpGet:  
             path: /
-            port: 8080
+            port: http-port
           initialDelaySeconds: 5
           periodSeconds: 5
           timeoutSeconds: 10  
@@ -45,7 +50,7 @@ spec:
         livenessProbe:
           httpGet:  
             path: /
-            port: 8080
+            port: http-port
           initialDelaySeconds: 5
           periodSeconds: 5
           timeoutSeconds: 10 
