@@ -26,13 +26,21 @@ spec:
           limits:
             cpu: "250m"
             memory: "500M"
+        startupProbe:
+          httpGet:  
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          timeoutSeconds: 10  # https://github.com/kubernetes/kubernetes/issues/89898#issuecomment-1028654403
+          failureThreshold: 12
         readinessProbe:
           httpGet:  
             path: /
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
-          timeoutSeconds: 10  # https://github.com/kubernetes/kubernetes/issues/89898#issuecomment-1028654403
+          timeoutSeconds: 10  
           failureThreshold: 2
         livenessProbe:
           httpGet:  
@@ -40,5 +48,5 @@ spec:
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
-          timeoutSeconds: 10  # https://github.com/kubernetes/kubernetes/issues/89898#issuecomment-1028654403
+          timeoutSeconds: 10 
           failureThreshold: 10
