@@ -1,5 +1,5 @@
 kind: Service
-apiVersion:
+apiVersion: v1
 metadata:
   name: demo-app-service
 spec:
