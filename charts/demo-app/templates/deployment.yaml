@@ -21,6 +21,9 @@ spec:
       containers: 
       - name: demo-app
         image: us-central1-docker.pkg.dev/citric-shine-378115/demo-app/demo-app:latest
+        volumeMounts:
+        - mountPath: /mnt/pvc
+          name: demo-volume
         ports:
         - name: http-port
           containerPort: 8080
@@ -55,3 +58,7 @@ spec:
           periodSeconds: 5
           timeoutSeconds: 10 
           failureThreshold: 10
+      volumes: 
+      - name: demo-volume
+        persistentVolumeClaim:
+          claimName: demo-app-pvc
