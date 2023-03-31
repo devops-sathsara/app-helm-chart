@@ -2,14 +2,14 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: demo-app-ingress
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-issuer-staging"   
+  # annotations:
+  #   cert-manager.io/cluster-issuer: "letsencrypt-issuer-staging"   
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts: 
-    - app.example.com
-    secretName: demo-app-tls
+  # tls:
+  # - hosts: 
+  #   - app.example.com
+  #   secretName: demo-app-tls
   rules:
   - host: app.example.com 
     http:
