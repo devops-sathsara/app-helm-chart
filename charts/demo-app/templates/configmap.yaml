@@ -1,0 +1,12 @@
+apiVersion:
+kind: ConfigMap
+metadata:
+  name: demo-app-cm
+data:   
+  # property-like keys; each key maps to a simple value
+  user_count: 5
+
+  # file-like keys
+  user.properties: |
+    shop_count=25
+    product_count=100

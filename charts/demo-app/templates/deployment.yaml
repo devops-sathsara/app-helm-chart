@@ -24,9 +24,18 @@ spec:
         volumeMounts:
         - mountPath: /mnt/pvc
           name: demo-volume
+        - mountPath: /mnt/configs
+          name: demo-app-config
+          readOnly: true
         ports:
         - name: http-port
           containerPort: 8080
+        env: 
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: demo-app-secret
+              key: database-password
         resources:
           requests:
             cpu: "100m"
@@ -62,3 +71,6 @@ spec:
       - name: demo-volume
         persistentVolumeClaim:
           claimName: demo-app-pvc
+      - name: demo-app-config
+        configMap:
+          name: demo-app-cm
